@@ -1,0 +1,21 @@
+@import '../../assets/styles/mixins/variables';
+@import '../../assets/styles/mixins/breakpoints';
+
+.form-contact {
+	padding: 40px;
+
+	&__label{
+		font-size: 12px;
+		color: $color-gray-dark;
+		margin-bottom: 14px;
+	}
+
+	&__field {
+		margin-bottom: 14px;
+		margin-left: 14px;
+
+		&_offset {
+			margin-left: 46px;
+		}
+	}
+}

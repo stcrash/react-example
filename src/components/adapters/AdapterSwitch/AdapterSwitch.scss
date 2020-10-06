@@ -1,0 +1,75 @@
+@import '../../../assets/styles/mixins/variables';
+@import '../../../assets/styles/mixins/breakpoints';
+
+$size: 18px;
+
+.adapter-switch {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+	user-select: none;
+	color: $color-gray-dark;
+	white-space: nowrap;
+	font-weight: $font-weight-bold;
+	transition: color $transition-time;
+
+	&:not(&_disabled):hover {
+		color: $color-gray-darkness;
+	}
+
+	&_disabled {
+		opacity: .6;
+	}
+
+	&__label {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__field {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+
+	&__toggle {
+		display: inline-block;
+		width: $size * 1.9;
+		height: $size;
+		background: #e9e8e4;
+		border: 2px solid #e9e8e4;
+		border-radius: $size;
+		position: relative;
+		box-sizing: content-box;
+		margin: 0 8px;
+		transition: background $transition-time, border-color $transition-time;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: $size;
+			height: $size;
+			background: white;
+			border-radius: $size;
+			right: calc(100% - #{$size});
+			transition: right $transition-time;
+		}
+
+		&_checked {
+			background: #ff9b36;
+			border-color: #ff9b36;
+			&:after {
+				right: 0;
+			}
+		}
+	}
+
+	&__positive_active,
+	&__negative_active {
+		color: $color-gray-darkness;
+	}
+}

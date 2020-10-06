@@ -1,0 +1,14 @@
+@import '../../assets/styles/mixins/variables';
+@import '../../assets/styles/mixins/breakpoints';
+
+.icon {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	height: 100%;
+	color: $color-gray-dark;
+
+	&_loading {
+		animation: loadingCircle 1s infinite linear;
+	}
+}

@@ -1,0 +1,65 @@
+@import '../../../assets/styles/mixins/variables';
+@import '../../../assets/styles/mixins/breakpoints';
+
+$size: 20px;
+$color-border: $color-gray-dark;
+$color-circle: $color-gray-darkness;
+
+.adapter-radio {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	padding-left: $size + 10px;
+	font-weight: $font-weight-bold;
+
+	&:not(&_disabled) &__label {
+		cursor: pointer;
+	}
+
+	&__field {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+		width: 0;
+		height: 0;
+		opacity: 0;
+	}
+
+	&__icon {
+		font-size: $size;
+		width: 1em;
+		height: 1em;
+		position: absolute;
+		border: 2px solid $color-border;
+		border-radius: 50%;
+		left: 0;
+		top: 0;
+		transition: box-shadow $transition-time;
+
+		&:after {
+			content: '';
+			display: block;
+			width: $size * 0.5;
+			height: $size * 0.5;
+			background: $color-circle;
+			border-radius: 50%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%) scale(0);
+			transition: transform $transition-time;
+		}
+
+		&_checked {
+			&:after {
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+	}
+	&:not(&_disabled):hover &__icon {
+		box-shadow: $color-border 0 0 0 1px;
+	}
+
+	&_disabled {
+		opacity: 0.4;
+	}
+}

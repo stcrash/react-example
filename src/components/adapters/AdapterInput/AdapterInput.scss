@@ -1,0 +1,21 @@
+@import '../../../assets/styles/mixins/variables';
+@import '../../../assets/styles/mixins/breakpoints';
+
+$color-border: $color-gray-dark;
+
+.adapter-input{
+	border-radius: 30px;
+	border: 1px solid $color-border;
+	outline: 0;
+	transition: box-shadow $transition-time;
+	padding: 6px 14px;
+	font-weight: $font-weight-bold;
+
+	&:not(&_disabled):hover {
+		box-shadow: $color-border 0 0 0 1px;
+	}
+
+	&_disabled {
+		opacity: 0.4;
+	}
+}

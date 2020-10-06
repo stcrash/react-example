@@ -1,0 +1,28 @@
+@import '../../assets/styles/mixins/variables';
+@import '../../assets/styles/mixins/breakpoints';
+
+.helper {
+	display: inline-block;
+	vertical-align: top;
+
+	&__button{
+		position: relative;
+		z-index: 1;
+		cursor: pointer;
+		transition: opacity $transition-time;
+		background: none;
+		border: 0;
+		outline: 0;
+		padding: 0;
+
+		&:hover{
+			opacity: .8;
+		}
+	}
+
+	&__tooltip{
+		position: absolute;
+		margin: 2px 0 0 10px;
+		z-index: 10;
+	}
+}
